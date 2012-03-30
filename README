@@ -1,0 +1,42 @@
+package br.ufpb.ccae.dce.aps.projeto.gartic;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class FachadaGartic {
+  
+		private Jogo gartic;
+		private GerenciadorConexaoRede conectar;
+		private GerenciadorBancoPalavras bd;
+		private Editor paint;
+		
+		public FachadaGartic(){
+			this.gartic = new Jogo();
+			this.bd = new GerenciadorBancoPalavras();
+			this.conectar = new GerenciadorConexaoRede();
+		}
+		
+		public void iniciarJogo(Jogo gartic){ 
+			gartic.iniciar();
+			conectar.start();			
+		}
+		
+		public void secaoTema(String escolherTema){
+			bd.tema(escolherTema);
+		}
+		public void initPartida(){
+			paint.editor();
+			bd.palavraAdvinhar();
+		}
+		public String insereNick(String nome){
+			return nome;
+		}
+		
+		/*public List<GerenciadorConexaoRede> Rede(LinkedList<ConexaoRede> listaIP){
+		   	listaIP = new LinkedList<GerenciadorConexaoRede>();
+		   	return  listaIP;
+		}*/
+		
+		
+
+	}
